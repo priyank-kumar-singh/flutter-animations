@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'home.dart';
-import 'themes/theme.dart';
+import 'config/config.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,14 +17,15 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    currentAppTheme.addListener(() {
+    appTheme = AppTheme();
+    appTheme.addListener(() {
       setState(() {});
     });
   }
 
   @override
   void dispose() {
-    currentAppTheme.removeListener(() {});
+    appTheme.removeListener(() {});
     super.dispose();
   }
 
@@ -34,10 +34,12 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Flutter Animations',
       debugShowCheckedModeBanner: false,
-      theme: lightTheme,
-      darkTheme: darkTheme,
-      themeMode: currentAppTheme.themeMode,
-      home: HomePage(),
+      theme: appTheme.light,
+      darkTheme: appTheme.dark,
+      themeMode: appTheme.themeMode,
+      initialRoute: Routes.root,
+      routes: RouteConfig.routes,
+      onGenerateRoute: RouteHandler.generateRoute,
     );
   }
 }

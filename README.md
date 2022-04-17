@@ -1,8 +1,10 @@
 # Flutter Animations
 
+Live Web: [flutter-animations.netlify.app](https://flutter-animations.netlify.app/)
+
 **Infinite Loop**
 
-<img src="images/infinite_loop.jpg" width=250>
+<img src="assets/images/infinite_loop.jpg" width=250>
 <br><br>
 
 ## Find me around web: <img align="left" src="https://raw.githubusercontent.com/priyank-kumar-singh/priyank-kumar-singh/main/assets/hacker.png" height="150" width="150"/>
